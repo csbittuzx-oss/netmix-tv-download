@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download NETMIX Android TV - Official APK</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <meta name="theme-color" content="#0a0a0c">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body {
+      background: #08080a;
+      color: #f5f5f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+      overflow-x: hidden;
+      position: relative;
+    }
+    /* Liquid Glass background glow */
+    .glow-bg {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 650px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(229, 9, 20, 0.32) 0%, rgba(184, 29, 36, 0.14) 45%, rgba(0,0,0,0) 70%);
+      filter: blur(80px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    /* Logo with rounded corners & glass border */
+    .logo-container {
+      margin-bottom: 22px;
+      position: relative;
+    }
+    .logo-container img {
+      width: 110px;
+      height: 110px;
+      border-radius: 26px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.15);
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .logo-container img:hover {
+      transform: scale(1.05);
+    }
+    .tv-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      background: rgba(229, 9, 20, 0.15);
+      color: #ff4d4d;
+      border: 1px solid rgba(229, 9, 20, 0.35);
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      margin-bottom: 10px;
+      background: linear-gradient(180deg, #ffffff 30%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .subtitle {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.65);
+      max-width: 520px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+
+    /* Primary Universal Download Card */
+    .primary-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 22px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 30px;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+      position: relative;
+      overflow: hidden;
+    }
+    .primary-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    }
+    .card-badge {
+      background: #e50914;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 22px;
+    }
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #e50914;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 14px;
+      width: 100%;
+      max-width: 440px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 24px rgba(229, 9, 20, 0.45);
+    }
+    .btn-main:hover {
+      background: #f40612;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(229, 9, 20, 0.6);
+    }
+    .card-meta {
+      display: flex;
+      gap: 16px;
+      margin-top: 14px;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    /* Architecture Options Grid */
+    .section-heading {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 10px 0 16px;
+      color: rgba(255, 255, 255, 0.85);
+      align-self: flex-start;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+    @media (min-width: 580px) {
+      .options-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .opt-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 18px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .opt-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+    .opt-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .opt-target {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 14px;
+      min-height: 34px;
+    }
+    .btn-opt {
+      display: inline-block;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+    .btn-opt:hover {
+      background: rgba(255, 255, 255, 0.16);
+      border-color: rgba(255, 255, 255, 0.35);
+    }
+
+    /* TV Install Steps */
+    .install-box {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+    .install-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .step-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.75);
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(229, 9, 20, 0.2);
+      color: #e50914;
+      font-weight: 700;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="glow-bg"></div>
+
+  <div class="container">
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="NETMIX Android TV Logo">
+    </div>
+
+    <div class="tv-tag">Android TV & Google TV</div>
+    <h1>NETMIX for TV</h1>
+    <p class="subtitle">Experience hardware-accelerated 4K streaming, Apple tvOS fluid interfaces, and decentralized media discovery on the big screen.</p>
+
+    <!-- Primary Universal Option -->
+    <div class="primary-card">
+      <span class="card-badge">Universal TV Release</span>
+      <h2 class="card-title">Universal TV APK</h2>
+      <p class="card-desc">Guaranteed 100% compatible with all Android TV, Google TV, Fire TV, and Smart TV boxes.</p>
+      
+      <a href="NetmixTV-latest-universal.apk" class="btn-main" download>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        Download Universal TV APK (90.9 MB)
+      </a>
+
+      <div class="card-meta">
+        <span>Version 1.0.0</span>
+        <span>•</span>
+        <span>Multi-ABI Fat Bundle</span>
+        <span>•</span>
+        <span>Zero Setup</span>
+      </div>
+    </div>
+
+    <!-- Targeted TV Architecture Options -->
+    <h3 class="section-heading">Targeted Architecture Downloads</h3>
+    <div class="options-grid">
+      <!-- ARMv7 -->
+      <div class="opt-card">
+        <h4 class="opt-title">ARMv7 (32-bit)</h4>
+        <p class="opt-target">Mi TV, Fire TV Stick, budget smart TVs (28.4 MB)</p>
+        <a href="NetmixTV-v1.0.0-armeabi-v7a.apk" class="btn-opt" download>Download 32-bit</a>
+      </div>
+
+      <!-- ARM64 -->
+      <div class="opt-card">
+        <h4 class="opt-title">ARM64 (64-bit)</h4>
+        <p class="opt-target">Nvidia Shield TV, modern Sony 4K, TCL (31.7 MB)</p>
+        <a href="NetmixTV-v1.0.0-arm64-v8a.apk" class="btn-opt" download>Download 64-bit</a>
+      </div>
+
+      <!-- x86_64 -->
+      <div class="opt-card">
+        <h4 class="opt-title">x86_64</h4>
+        <p class="opt-target">PC Android TV Emulators, Chromebooks (36.5 MB)</p>
+        <a href="NetmixTV-v1.0.0-x86_64.apk" class="btn-opt" download>Download x86_64</a>
+      </div>
+    </div>
+
+    <!-- Fast Installation Guide -->
+    <div class="install-box">
+      <div class="install-title">How to Install on Your TV</div>
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div><strong>USB Drive</strong>: Download the Universal APK on your PC, copy to a USB drive, plug into your TV, and install via File Manager.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div><strong>Downloader App</strong>: Open the <em>Downloader</em> app on Android TV or Fire Stick, enter this URL, and click download.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div><strong>ADB Install</strong>: Connect via ADB (<code>adb connect &lt;tv-ip&gt;</code>) and run <code>adb install -r NetmixTV-latest-universal.apk</code>.</div>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 NETMIX Entertainment. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
